@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46511AF72C0D699400192D1C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46511AF62C0D699400192D1C /* Protocols.swift */; };
+		46511AF92C0D6B4A00192D1C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46511AF82C0D6B4A00192D1C /* APIService.swift */; };
+		4678BB362C0DA26E00078FD9 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678BB352C0DA26E00078FD9 /* ItemViewModel.swift */; };
+		4678BB382C0DA2EE00078FD9 /* QuestDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678BB372C0DA2EE00078FD9 /* QuestDetailView.swift */; };
+		469C50362C06DD7100F5A65E /* QuestiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50352C06DD7100F5A65E /* QuestiosApp.swift */; };
+		469C50382C06DD7100F5A65E /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50372C06DD7100F5A65E /* QuestView.swift */; };
+		469C503A2C06DD7300F5A65E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469C50392C06DD7300F5A65E /* Assets.xcassets */; };
+		469C503D2C06DD7300F5A65E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469C503C2C06DD7300F5A65E /* Preview Assets.xcassets */; };
+		469C50442C06DE6700F5A65E /* QuestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50432C06DE6700F5A65E /* QuestRowView.swift */; };
+		469C50462C06E81200F5A65E /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50452C06E81200F5A65E /* Quest.swift */; };
+		469C50482C0720C200F5A65E /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50472C0720C200F5A65E /* QuestViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		46511AF62C0D699400192D1C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		46511AF82C0D6B4A00192D1C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		4678BB352C0DA26E00078FD9 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		4678BB372C0DA2EE00078FD9 /* QuestDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailView.swift; sourceTree = "<group>"; };
+		469C50322C06DD7100F5A65E /* Questios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		469C50352C06DD7100F5A65E /* QuestiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestiosApp.swift; sourceTree = "<group>"; };
+		469C50372C06DD7100F5A65E /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
+		469C50392C06DD7300F5A65E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		469C503C2C06DD7300F5A65E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		469C50432C06DE6700F5A65E /* QuestRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestRowView.swift; sourceTree = "<group>"; };
+		469C50452C06E81200F5A65E /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
+		469C50472C0720C200F5A65E /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
+		469C50492C072C5D00F5A65E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		469C502F2C06DD7100F5A65E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46511AFA2C0D788700192D1C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				469C50472C0720C200F5A65E /* QuestViewModel.swift */,
+				4678BB352C0DA26E00078FD9 /* ItemViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		46511AFB2C0D789C00192D1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				469C50372C06DD7100F5A65E /* QuestView.swift */,
+				469C50432C06DE6700F5A65E /* QuestRowView.swift */,
+				4678BB372C0DA2EE00078FD9 /* QuestDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46511AFC2C0D78A500192D1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				469C50452C06E81200F5A65E /* Quest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46511AFD2C0D78D400192D1C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				46511AF62C0D699400192D1C /* Protocols.swift */,
+				46511AF82C0D6B4A00192D1C /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		469C50292C06DD7100F5A65E = {
+			isa = PBXGroup;
+			children = (
+				469C50342C06DD7100F5A65E /* Questios */,
+				469C50332C06DD7100F5A65E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		469C50332C06DD7100F5A65E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				469C50322C06DD7100F5A65E /* Questios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		469C50342C06DD7100F5A65E /* Questios */ = {
+			isa = PBXGroup;
+			children = (
+				469C50352C06DD7100F5A65E /* QuestiosApp.swift */,
+				46511AFC2C0D78A500192D1C /* Model */,
+				46511AFB2C0D789C00192D1C /* View */,
+				46511AFA2C0D788700192D1C /* View Model */,
+				46511AFD2C0D78D400192D1C /* Services */,
+				469C50492C072C5D00F5A65E /* Info.plist */,
+				469C50392C06DD7300F5A65E /* Assets.xcassets */,
+				469C503B2C06DD7300F5A65E /* Preview Content */,
+			);
+			path = Questios;
+			sourceTree = "<group>";
+		};
+		469C503B2C06DD7300F5A65E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				469C503C2C06DD7300F5A65E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		469C50312C06DD7100F5A65E /* Questios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 469C50402C06DD7300F5A65E /* Build configuration list for PBXNativeTarget "Questios" */;
+			buildPhases = (
+				469C502E2C06DD7100F5A65E /* Sources */,
+				469C502F2C06DD7100F5A65E /* Frameworks */,
+				469C50302C06DD7100F5A65E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Questios;
+			productName = Questios;
+			productReference = 469C50322C06DD7100F5A65E /* Questios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		469C502A2C06DD7100F5A65E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					469C50312C06DD7100F5A65E = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 469C502D2C06DD7100F5A65E /* Build configuration list for PBXProject "Questios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 469C50292C06DD7100F5A65E;
+			productRefGroup = 469C50332C06DD7100F5A65E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				469C50312C06DD7100F5A65E /* Questios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		469C50302C06DD7100F5A65E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				469C503D2C06DD7300F5A65E /* Preview Assets.xcassets in Resources */,
+				469C503A2C06DD7300F5A65E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		469C502E2C06DD7100F5A65E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				469C50382C06DD7100F5A65E /* QuestView.swift in Sources */,
+				4678BB362C0DA26E00078FD9 /* ItemViewModel.swift in Sources */,
+				46511AF92C0D6B4A00192D1C /* APIService.swift in Sources */,
+				469C50462C06E81200F5A65E /* Quest.swift in Sources */,
+				469C50482C0720C200F5A65E /* QuestViewModel.swift in Sources */,
+				46511AF72C0D699400192D1C /* Protocols.swift in Sources */,
+				4678BB382C0DA2EE00078FD9 /* QuestDetailView.swift in Sources */,
+				469C50442C06DE6700F5A65E /* QuestRowView.swift in Sources */,
+				469C50362C06DD7100F5A65E /* QuestiosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		469C503E2C06DD7300F5A65E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		469C503F2C06DD7300F5A65E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		469C50412C06DD7300F5A65E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Questios/Preview Content\"";
+				DEVELOPMENT_TEAM = GD8VREVBA4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Questios/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidgun.Questios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		469C50422C06DD7300F5A65E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Questios/Preview Content\"";
+				DEVELOPMENT_TEAM = GD8VREVBA4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Questios/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidgun.Questios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		469C502D2C06DD7100F5A65E /* Build configuration list for PBXProject "Questios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				469C503E2C06DD7300F5A65E /* Debug */,
+				469C503F2C06DD7300F5A65E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		469C50402C06DD7300F5A65E /* Build configuration list for PBXNativeTarget "Questios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				469C50412C06DD7300F5A65E /* Debug */,
+				469C50422C06DD7300F5A65E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 469C502A2C06DD7100F5A65E /* Project object */;
+}
