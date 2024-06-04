@@ -22,8 +22,12 @@ extension URLSession {
     func fetchQuests() async throws -> [Quest] {
         let (data, response) = try await data(from: Endpoint.quests.url)
         
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw NSError(domain: "Failed to fetch quests", code: 0, userInfo: nil)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIErrorResponse(message: "Invalid response", statusCode: 0)
+        }
+        
+        guard httpResponse.statusCode == 200 else {
+            throw APIErrorResponse(message: "Failed to fetch quests", statusCode: httpResponse.statusCode)
         }
         
         let decoder = JSONDecoder()
@@ -36,8 +40,12 @@ extension URLSession {
     func getQuestDetails(questId: String) async throws -> Quest {
         let (data, response) = try await data(from: Endpoint.questDetails(id: questId).url)
         
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw NSError(domain: "Failed to fetch quest details", code: 0, userInfo: nil)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIErrorResponse(message: "Invalid response", statusCode: 0)
+        }
+        
+        guard httpResponse.statusCode == 200 else {
+            throw APIErrorResponse(message: "Failed to fetch quest details", statusCode: httpResponse.statusCode)
         }
         
         let decoder = JSONDecoder()

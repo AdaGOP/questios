@@ -28,6 +28,17 @@ struct QuestView: View {
                 await model.fetchQuests()
             }
             .padding()
+            .overlay {
+                if model.quests.isEmpty {
+                    /// In case there aren't any search results, we can
+                    /// show the new content unavailable view.
+                    ContentUnavailableView(
+                        "We couldn't fetch the data",
+                        systemImage: "icloud.and.arrow.down",
+                        description: Text("Please try again later")
+                    )
+                }
+            }
         }
     }
 }

@@ -7,10 +7,16 @@
 
 import Foundation
 
-
+// MARK: - API Service Protocol
 protocol APIServiceProtocol {
     func fetchQuests() async throws -> [Quest]
     func getQuestDetails(questId: String) async throws -> Quest
+}
+
+// MARK: - API Error Protocol
+protocol APIError: Error {
+    var message: String { get }
+    var statusCode: Int { get }
 }
 
 // MARK: - Endpoint

@@ -20,7 +20,11 @@ struct QuestDetailView: View {
                     Text("Prize: \(questDetails.prize)")
                 }
             } else {
-                Text("Loading quest details...")
+                ContentUnavailableView(
+                    "We couldn't fetch quest detail",
+                    systemImage: "icloud.and.arrow.down",
+                    description: Text("Please try again later")
+                )
             }
         }
         .onAppear {

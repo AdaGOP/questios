@@ -1,0 +1,72 @@
+[
+  {
+  "id": "52a20495-d5d4-4506-bac5-0da06d2373ac",
+  "title": "Morning Jog in the Park (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Easy",
+  "prize": "1"
+  },
+  {
+  "id": "670ed27a-0285-4df9-9a4b-181cc1acea7d",
+  "title": "Grocery Shopping Challenge (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Medium",
+  "prize": "3"
+  },
+  {
+  "id": "2ce2a21b-a91a-4e7b-ba86-4811b31e367c",
+  "title": "Cooking a Gourmet Meal (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Hard",
+  "prize": "4"
+  },
+  {
+  "id": "4b572ce8-c6bb-4dc1-bed5-0f5ffc4040d9",
+  "title": "Laundry Day Extravaganza (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Easy",
+  "prize": "2"
+  },
+  {
+  "id": "abb0b428-9c13-4f5e-b8a8-1834e9e2f663",
+  "title": "Tidy Up the Living Room (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Hard",
+  "prize": "5"
+  },
+  {
+  "id": "5afcaf33-3bd1-40c7-ba20-35b2610f422f",
+  "title": "Afternoon Tea Break (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Easy",
+  "prize": "1"
+  },
+  {
+  "id": "e1ab7b14-0c21-4ddc-8f35-bce7074a057d",
+  "title": "Evening Stroll with the Dog (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Medium",
+  "prize": "4"
+  },
+  {
+  "id": "7af82903-e61f-4f40-8454-d1ac979840b4",
+  "title": "Catch Up on Emails (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Easy",
+  "prize": "1"
+  },
+  {
+  "id": "144a7ec0-d1c2-4d06-b2f6-433fd99e5d06",
+  "title": "Organize the Bookshelf (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Hard",
+  "prize": "5"
+  },
+  {
+  "id": "e3871fa2-4d01-49f0-bc6d-ff63651df308",
+  "title": "Water the Plants (D)",
+  "url": "https://loremflickr.com/640/480",
+  "level": "Easy",
+  "prize": "2"
+  }
+]
