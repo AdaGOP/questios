@@ -13,12 +13,6 @@ protocol APIServiceProtocol {
     func getQuestDetails(questId: String) async throws -> Quest
 }
 
-// MARK: - API Error Protocol
-protocol APIError: Error {
-    var message: String { get }
-    var statusCode: Int { get }
-}
-
 // MARK: - Endpoint
 enum Endpoint {
     case quests
@@ -43,4 +37,21 @@ enum Endpoint {
         
         return url
     }
+}
+
+// MARK: - API Error
+enum APIError: Error {
+    case invalidResponse
+    case httpError(HTTPStatusCode)
+    case decodingError(Error)
+}
+
+enum HTTPStatusCode: Int {
+    case ok = 200
+    case badRequest = 400
+    case unauthorized = 401
+    case forbidden = 403
+    case notFound = 404
+    case internalServerError = 500
+    case unknown
 }

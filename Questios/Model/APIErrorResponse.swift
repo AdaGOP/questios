@@ -8,7 +8,12 @@
 import Foundation
 
 // MARK: - APIErrorResponse
-struct APIErrorResponse: APIError {
-    let message: String
-    let statusCode: Int
-}
+//struct APIErrorResponse: APIError {
+//    let message: String
+//    let statusCode: Int
+//    
+//    init(statusCode: HTTPStatusCode) {
+//        self.message = statusCode.message
+//        self.statusCode = statusCode.rawValue
+//    }
+//}

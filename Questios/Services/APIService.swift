@@ -21,37 +21,45 @@ class APIService: APIServiceProtocol {
 extension URLSession {
     func fetchQuests() async throws -> [Quest] {
         let (data, response) = try await data(from: Endpoint.quests.url)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIErrorResponse(message: "Invalid response", statusCode: 0)
-        }
-        
-        guard httpResponse.statusCode == 200 else {
-            throw APIErrorResponse(message: "Failed to fetch quests", statusCode: httpResponse.statusCode)
-        }
+        try handleResponse(data: data, response: response)
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         
-        let quests = try decoder.decode([Quest].self, from: data)
-        return quests
+        do {
+            let quests = try decoder.decode([Quest].self, from: data)
+            return quests
+        } catch {
+            throw APIError.decodingError(error)
+        }
     }
     
     func getQuestDetails(questId: String) async throws -> Quest {
         let (data, response) = try await data(from: Endpoint.questDetails(id: questId).url)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIErrorResponse(message: "Invalid response", statusCode: 0)
-        }
-        
-        guard httpResponse.statusCode == 200 else {
-            throw APIErrorResponse(message: "Failed to fetch quest details", statusCode: httpResponse.statusCode)
-        }
+        try handleResponse(data: data, response: response)
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         
-        let questDetails = try decoder.decode(Quest.self, from: data)
-        return questDetails
+        do {
+            let questDetails = try decoder.decode(Quest.self, from: data)
+            return questDetails
+        } catch {
+            throw APIError.decodingError(error)
+        }
+    }
+    
+    private func handleResponse(data: Data, response: URLResponse) throws {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+        let statusCode = HTTPStatusCode(rawValue: httpResponse.statusCode) ?? .unknown
+        
+        switch statusCode {
+        case .ok:
+            return
+        default:
+            throw APIError.httpError(statusCode)
+        }
     }
 }
