@@ -19,6 +19,8 @@
 		469C50442C06DE6700F5A65E /* QuestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50432C06DE6700F5A65E /* QuestRowView.swift */; };
 		469C50462C06E81200F5A65E /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50452C06E81200F5A65E /* Quest.swift */; };
 		469C50482C0720C200F5A65E /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50472C0720C200F5A65E /* QuestViewModel.swift */; };
+		46F883532C1050D200B3FDE0 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F883522C1050D200B3FDE0 /* DifficultyView.swift */; };
+		46F883552C1050E900B3FDE0 /* PrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F883542C1050E900B3FDE0 /* PrizeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		469C50452C06E81200F5A65E /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		469C50472C0720C200F5A65E /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
 		469C50492C072C5D00F5A65E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		46F883522C1050D200B3FDE0 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
+		46F883542C1050E900B3FDE0 /* PrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		46511AFB2C0D789C00192D1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46F883512C1050B000B3FDE0 /* Quest Component */,
 				469C50372C06DD7100F5A65E /* QuestView.swift */,
 				469C50432C06DE6700F5A65E /* QuestRowView.swift */,
 				4678BB372C0DA2EE00078FD9 /* QuestDetailView.swift */,
@@ -123,6 +128,15 @@
 				469C503C2C06DD7300F5A65E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46F883512C1050B000B3FDE0 /* Quest Component */ = {
+			isa = PBXGroup;
+			children = (
+				46F883522C1050D200B3FDE0 /* DifficultyView.swift */,
+				46F883542C1050E900B3FDE0 /* PrizeView.swift */,
+			);
+			path = "Quest Component";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,9 +212,11 @@
 			files = (
 				469C50382C06DD7100F5A65E /* QuestView.swift in Sources */,
 				4678BB362C0DA26E00078FD9 /* ItemViewModel.swift in Sources */,
+				46F883552C1050E900B3FDE0 /* PrizeView.swift in Sources */,
 				46511AF92C0D6B4A00192D1C /* APIService.swift in Sources */,
 				469C50462C06E81200F5A65E /* Quest.swift in Sources */,
 				469C50482C0720C200F5A65E /* QuestViewModel.swift in Sources */,
+				46F883532C1050D200B3FDE0 /* DifficultyView.swift in Sources */,
 				46511AF72C0D699400192D1C /* Protocols.swift in Sources */,
 				4678BB382C0DA2EE00078FD9 /* QuestDetailView.swift in Sources */,
 				469C50442C06DE6700F5A65E /* QuestRowView.swift in Sources */,

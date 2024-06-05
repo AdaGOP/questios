@@ -29,22 +29,16 @@ struct QuestRowView: View {
                 }
             }
             .id(quest.id)
-            .frame(width: 200, height: 120)
+            .frame(width: .infinity, height: 200)
             .clipShape(.rect(cornerRadius: 8))
             HStack {
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 8) {
                     Text(quest.title)
                         .font(.system(size: 17))
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
-                    Text(quest.level)
-                        .font(.system(size: 15))
-                        .lineLimit(2)
-                        .foregroundColor(.red)
-                    Text(quest.prize)
-                        .font(.system(size: 15))
-                        .lineLimit(2)
-                        .foregroundColor(.green)
+                    DifficultyView(level: quest.level)
+                    PrizeView(prize: quest.prize)
                 }
                 Spacer()
             }
@@ -52,6 +46,7 @@ struct QuestRowView: View {
     }
 }
 
+
 #Preview {
-    QuestRowView(quest: Quest(id: "12312", title: "Finding Nemo", url: "https://images.unsplash.com/photo-1535591273668-578e31182c4f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb", level: "Medium", prize: "3"))
+    QuestRowView(quest: Quest(id: "12312", title: "Finding Nemo", url: "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=3353&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", level: "Medium", prize: "3"))
 }
