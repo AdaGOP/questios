@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  PrizeView.swift
 //  Questios
 //
 //  Created by David Gunawan on 05/06/24.
@@ -17,8 +17,4 @@ struct PrizeView: View {
                 .foregroundColor(.green)
         }
     }
-}
-
-#Preview {
-    SwiftUIView()
 }
