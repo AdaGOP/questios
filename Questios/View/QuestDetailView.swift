@@ -43,12 +43,14 @@ struct QuestDetailView: View {
                     }
                 }
                 Spacer()
+            }  else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .onAppear {
-            Task {
-                await viewModel.getQuestDetails(questId: questId)
-            }
+        .task {
+            await viewModel.getQuestDetails(questId: questId)
         }
     }
 }
