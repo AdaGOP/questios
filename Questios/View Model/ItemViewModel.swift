@@ -18,7 +18,8 @@ class ItemViewModel: ObservableObject {
     @MainActor
     func getQuestDetails(questId: String) async {
         do {
-            questDetails = try await apiService.getQuestDetails(questId: questId)
+            
+            // Fix the getQuestDetails function first, then call it from here accordingly.
         } catch {
             print("Error: \(error.localizedDescription)")
         }

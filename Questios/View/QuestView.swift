@@ -15,10 +15,7 @@ struct QuestView: View {
             List(model.quests) { quest in
                 ZStack {
                     QuestRowView(quest: quest)
-                    NavigationLink(destination: QuestDetailView(questId: quest.id)) {
-                        EmptyView()
-                    }
-                    .opacity(0)
+                    // You need to add something here to navigate to the page detail from here.
                 }
                 .listRowSeparator(.hidden)
             }

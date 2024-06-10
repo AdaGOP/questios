@@ -9,8 +9,7 @@ import Foundation
 
 // MARK: - API Service Protocol
 protocol APIServiceProtocol {
-    func fetchQuests() async throws -> [Quest]
-    func getQuestDetails(questId: String) async throws -> Quest
+    // Missing function, try to sync with functions from the APIService.
 }
 
 // MARK: - Endpoint for later configuration
@@ -22,4 +21,4 @@ enum APIError: Error {
 }
 
 
-// MARK: ENUM STATUS ERROR CODE
+// MARK: ENUM STATUS ERROR CODE for later configuration

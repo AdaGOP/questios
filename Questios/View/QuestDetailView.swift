@@ -43,11 +43,8 @@ struct QuestDetailView: View {
                     }
                 }
                 Spacer()
-            }  else {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            // Even if you've already corrected all the code, there needs to be a catch here for the condition to make the .task work.
         }
         .task {
             await viewModel.getQuestDetails(questId: questId)

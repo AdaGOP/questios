@@ -18,7 +18,7 @@ class QuestViewModel: ObservableObject {
     @MainActor
     func fetchQuests() async {
         do {
-            quests = try await apiService.fetchQuests()
+            // Fix the fetchQuests function first, then call it from here accordingly.
         } catch {
             print("Error: \(error.localizedDescription)")
         }

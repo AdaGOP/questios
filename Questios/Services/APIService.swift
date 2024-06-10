@@ -17,15 +17,13 @@ class APIService: APIServiceProtocol {
     }
     
     private func loadQuestsFromFile() async throws -> [Quest] {
-        guard let url = Bundle.main.url(forResource: "DummyData", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: "Locate the JSON HERE", withExtension: "Extension of the file here") else {
             throw APIError.invalidResponse
         }
         
         do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
-            let quests = try decoder.decode([Quest].self, from: data)
+            // This code is totally incorrect, you need to decode the data from JSON properly and change the quest's value.
+            let quests = try! [Quest(from: Quest.self as! Decoder)]
             return quests
         } catch {
             throw APIError.decodingError(error)
@@ -33,21 +31,14 @@ class APIService: APIServiceProtocol {
     }
     
     private func loadQuestDetailsFromFile(questId: String) async throws -> Quest {
-        guard let url = Bundle.main.url(forResource: "DummyData", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: "Locate the JSON HERE", withExtension: "Extension of the file here") else {
             throw APIError.invalidResponse
         }
         
         do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
-            let quests = try decoder.decode([Quest].self, from: data)
-            
-            if let questDetails = quests.first(where: { $0.id == questId }) {
-                return questDetails
-            } else {
-                throw APIError.invalidResponse
-            }
+            // This code is totally incorrect, you need to decode the data from JSON properly and change the quest's value.
+            let quests = try! Quest(from: Quest.self as! Decoder)
+            return quests
         } catch {
             throw APIError.decodingError(error)
         }
