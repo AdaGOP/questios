@@ -13,9 +13,9 @@ struct QuestDetailView: View {
     
     var body: some View {
         Group{
-            if let questDetail = viewModel.questDetails {
+            if let questDetails = viewModel.questDetails {
                 VStack(alignment: .leading, spacing: 16.0) {
-                    AsyncImage(url: URL(string: questDetail.url)) { phase in
+                    AsyncImage(url: URL(string: questDetails.url)) { phase in
                         switch phase {
                         case .failure:
                             Image(systemName: "photo")
@@ -27,28 +27,22 @@ struct QuestDetailView: View {
                             ProgressView()
                         }
                     }
-                    .id(questDetail.id)
+                    .id(questDetails.id)
                     .frame(width: .infinity, height: 200)
                     HStack {
                         VStack(alignment: .leading, spacing: 8) {
-                            Text(questDetail.title)
+                            Text(questDetails.title)
                                 .font(.system(size: 17))
                                 .fontWeight(.bold)
                                 .foregroundColor(.gray)
-                            DifficultyView(level: questDetail.level)
-                            PrizeView(prize: questDetail.prize)
+                            DifficultyView(level: questDetails.level)
+                            PrizeView(prize: questDetails.prize)
                         }
                         .padding(.horizontal, 16)
                         Spacer()
                     }
                 }
                 Spacer()
-            } else {
-                ContentUnavailableView(
-                    "We couldn't fetch quest detail",
-                    systemImage: "icloud.and.arrow.down",
-                    description: Text("Please try again later")
-                )
             }
         }
         .onAppear {

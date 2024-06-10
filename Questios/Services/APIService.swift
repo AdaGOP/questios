@@ -9,24 +9,22 @@ import Foundation
 
 class APIService: APIServiceProtocol {
     func fetchQuests() async throws -> [Quest] {
-        try await URLSession.shared.fetchQuests()
+        try await loadQuestsFromFile()
     }
     
     func getQuestDetails(questId: String) async throws -> Quest {
-        try await URLSession.shared.getQuestDetails(questId: questId)
+        try await loadQuestDetailsFromFile(questId: questId)
     }
-}
-
-// MARK: - URLSession Extension
-extension URLSession {
-    func fetchQuests() async throws -> [Quest] {
-        let (data, response) = try await data(from: Endpoint.quests.url)
-        try handleResponse(data: data, response: response)
-        
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .secondsSince1970
+    
+    private func loadQuestsFromFile() async throws -> [Quest] {
+        guard let url = Bundle.main.url(forResource: "DummyData", withExtension: "json") else {
+            throw APIError.invalidResponse
+        }
         
         do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
             let quests = try decoder.decode([Quest].self, from: data)
             return quests
         } catch {
@@ -34,32 +32,26 @@ extension URLSession {
         }
     }
     
-    func getQuestDetails(questId: String) async throws -> Quest {
-        let (data, response) = try await data(from: Endpoint.questDetails(id: questId).url)
-        try handleResponse(data: data, response: response)
-        
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .secondsSince1970
+    private func loadQuestDetailsFromFile(questId: String) async throws -> Quest {
+        guard let url = Bundle.main.url(forResource: "DummyData", withExtension: "json") else {
+            throw APIError.invalidResponse
+        }
         
         do {
-            let questDetails = try decoder.decode(Quest.self, from: data)
-            return questDetails
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
+            let quests = try decoder.decode([Quest].self, from: data)
+            
+            if let questDetails = quests.first(where: { $0.id == questId }) {
+                return questDetails
+            } else {
+                throw APIError.invalidResponse
+            }
         } catch {
             throw APIError.decodingError(error)
         }
     }
-    
-    private func handleResponse(data: Data, response: URLResponse) throws {
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-        let statusCode = HTTPStatusCode(rawValue: httpResponse.statusCode) ?? .unknown
-        
-        switch statusCode {
-        case .ok:
-            return
-        default:
-            throw APIError.httpError(statusCode)
-        }
-    }
 }
+
+
