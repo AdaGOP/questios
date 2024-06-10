@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Quest: Identifiable, Decodable {
+struct Quest: Identifiable, Codable {
     let id: String
     let title: String
     let url: String
