@@ -19,8 +19,10 @@ class QuestAPIService: APIServiceProtocol {
 
 // MARK: - URLSession Extension
 extension URLSession {
+    
     func fetchQuests() async throws -> [Quest] {
-        let (data, response) = try await data(from: Endpoint.quests.url)
+        let endpoint = Endpoint.quests
+        let (data, response) = try await URLSession.shared.makeRequest(to: endpoint.url, with: endpoint.headers)
         try handleResponse(data: data, response: response)
         
         let decoder = JSONDecoder()
@@ -35,7 +37,8 @@ extension URLSession {
     }
     
     func getQuestDetails(questId: String) async throws -> Quest {
-        let (data, response) = try await data(from: Endpoint.questDetails(id: questId).url)
+        let endpoint = Endpoint.questDetails(id: questId)
+        let (data, response) = try await URLSession.shared.makeRequest(to: endpoint.url, with: endpoint.headers)
         try handleResponse(data: data, response: response)
         
         let decoder = JSONDecoder()
