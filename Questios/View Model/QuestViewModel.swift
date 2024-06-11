@@ -11,7 +11,7 @@ class QuestViewModel: ObservableObject {
     private let apiService: APIServiceProtocol
     @Published var quests: [Quest] = []
     
-    init(apiService: APIServiceProtocol = APIService()) {
+    init(apiService: APIServiceProtocol = QuestAPIService()) {
         self.apiService = apiService
     }
     

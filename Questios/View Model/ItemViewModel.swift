@@ -11,7 +11,7 @@ class ItemViewModel: ObservableObject {
     private let apiService: APIServiceProtocol
     @Published var questDetails: Quest?
     
-    init(apiService: APIServiceProtocol = APIService()) {
+    init(apiService: APIServiceProtocol = QuestAPIService()) {
         self.apiService = apiService
     }
     

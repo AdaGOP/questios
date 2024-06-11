@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIService: APIServiceProtocol {
+class QuestAPIService: APIServiceProtocol {
     func fetchQuests() async throws -> [Quest] {
         try await URLSession.shared.fetchQuests()
     }

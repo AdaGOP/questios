@@ -13,6 +13,20 @@ protocol APIServiceProtocol {
     func getQuestDetails(questId: String) async throws -> Quest
 }
 
+// **MARK: - Request Protocol**
+protocol RequestProtocol {
+    func makeRequest(to url: URL, with headers: [String: String]) async throws -> (Data, URLResponse)
+}
+
+extension URLSession: RequestProtocol {
+    func makeRequest(to url: URL, with headers: [String: String]) async throws -> (Data, URLResponse) {
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = headers
+        
+        return try await data(for: request)
+    }
+}
+
 // MARK: - Endpoint
 enum Endpoint {
     case quests
@@ -20,15 +34,20 @@ enum Endpoint {
     
     var url: URL {
         var components = URLComponents()
-        components.scheme = "http"
-        components.host = "localhost"
-        components.port = 3001
+        components.scheme = "https"
+        components.host = "hitmyhzteiesgzpejiip.supabase.co"
+        components.path = "/rest/v1/Quest"
         
         switch self {
         case .quests:
-            components.path = "/quests"
+            components.queryItems = [
+                URLQueryItem(name: "select", value: "*")
+            ]
         case .questDetails(let id):
-            components.path = "/quests/\(id)"
+            components.queryItems = [
+                URLQueryItem(name: "id", value: "eq.\(id)"),
+                URLQueryItem(name: "select", value: "*")
+            ]
         }
         
         guard let url = components.url else {
@@ -37,7 +56,15 @@ enum Endpoint {
         
         return url
     }
+    
+    var headers: [String: String] {
+        return [
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdG15aHp0ZWllc2d6cGVqaWlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTgwNzg4NTEsImV4cCI6MjAzMzY1NDg1MX0.pHw-nfKycex3VlWDo8GM8LjpeBMjOVLJK_14Ye5KhtE",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdG15aHp0ZWllc2d6cGVqaWlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTgwNzg4NTEsImV4cCI6MjAzMzY1NDg1MX0.pHw-nfKycex3VlWDo8GM8LjpeBMjOVLJK_14Ye5KhtE"
+        ]
+    }
 }
+
 
 // MARK: - API Error
 enum APIError: Error {

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct QuestView: View {
-    @StateObject private var model = QuestViewModel()
+    @StateObject private var viewModel = QuestViewModel()
     
     var body: some View {
         NavigationStack {
-            List(model.quests) { quest in
+            List(viewModel.quests) { quest in
                 ZStack {
                     QuestRowView(quest: quest)
                     NavigationLink(destination: QuestDetailView(questId: quest.id)) {
@@ -25,11 +25,11 @@ struct QuestView: View {
             .listStyle(.plain)
             .navigationTitle("Quests")
             .task {
-                await model.fetchQuests()
+                await viewModel.fetchQuests()
             }
             .padding()
             .overlay {
-                if model.quests.isEmpty {
+                if viewModel.quests.isEmpty {
                     /// In case there aren't any search results, we can
                     /// show the new content unavailable view.
                     ContentUnavailableView(
