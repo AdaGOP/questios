@@ -12,7 +12,7 @@ class QuestAPIService: APIServiceProtocol {
         try await URLSession.shared.fetchQuests()
     }
     
-    func getQuestDetails(questId: String) async throws -> Quest {
+    func getQuestDetails(questId: String) async throws -> [Quest] {
         try await URLSession.shared.getQuestDetails(questId: questId)
     }
 }
@@ -36,7 +36,7 @@ extension URLSession {
         }
     }
     
-    func getQuestDetails(questId: String) async throws -> Quest {
+    func getQuestDetails(questId: String) async throws -> [Quest] {
         let endpoint = Endpoint.questDetails(id: questId)
         let (data, response) = try await URLSession.shared.makeRequest(to: endpoint.url, with: endpoint.headers)
         try handleResponse(data: data, response: response)
@@ -45,7 +45,7 @@ extension URLSession {
         decoder.dateDecodingStrategy = .secondsSince1970
         
         do {
-            let questDetails = try decoder.decode(Quest.self, from: data)
+            let questDetails = try decoder.decode([Quest].self, from: data)
             return questDetails
         } catch {
             throw APIError.decodingError(error)

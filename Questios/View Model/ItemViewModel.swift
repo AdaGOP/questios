@@ -9,7 +9,7 @@ import Foundation
 
 class ItemViewModel: ObservableObject {
     private let apiService: APIServiceProtocol
-    @Published var questDetails: Quest?
+    @Published var questDetails:  [Quest] = []
     
     init(apiService: APIServiceProtocol = QuestAPIService()) {
         self.apiService = apiService

@@ -10,7 +10,7 @@ import Foundation
 // MARK: - API Service Protocol
 protocol APIServiceProtocol {
     func fetchQuests() async throws -> [Quest]
-    func getQuestDetails(questId: String) async throws -> Quest
+    func getQuestDetails(questId: String) async throws -> [Quest]
 }
 
 // **MARK: - Request Protocol**
@@ -22,7 +22,6 @@ extension URLSession: RequestProtocol {
     func makeRequest(to url: URL, with headers: [String: String]) async throws -> (Data, URLResponse) {
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = headers
-        
         return try await data(for: request)
     }
 }

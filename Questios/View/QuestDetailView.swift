@@ -13,7 +13,7 @@ struct QuestDetailView: View {
     
     var body: some View {
         Group{
-            if let questDetail = viewModel.questDetails {
+            if let questDetail = viewModel.questDetails.first {
                 VStack(alignment: .leading, spacing: 16.0) {
                     AsyncImage(url: URL(string: questDetail.url)) { phase in
                         switch phase {
