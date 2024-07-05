@@ -27,42 +27,42 @@ extension URLSession: RequestProtocol {
 }
 
 // MARK: - Endpoint
-enum Endpoint {
-    case quests
-    case questDetails(id: String)
-    
-    var url: URL {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "hitmyhzteiesgzpejiip.supabase.co"
-        components.path = "/rest/v1/Quest"
-        
-        switch self {
-        case .quests:
-            components.queryItems = [
-                URLQueryItem(name: "select", value: "*")
-            ]
-        case .questDetails(let id):
-            components.queryItems = [
-                URLQueryItem(name: "id", value: "eq.\(id)"),
-                URLQueryItem(name: "select", value: "*")
-            ]
-        }
-        
-        guard let url = components.url else {
-            preconditionFailure("Invalid URL components: \(components)")
-        }
-        
-        return url
-    }
-    
-    var headers: [String: String] {
-        return [
-            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdG15aHp0ZWllc2d6cGVqaWlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTgwNzg4NTEsImV4cCI6MjAzMzY1NDg1MX0.pHw-nfKycex3VlWDo8GM8LjpeBMjOVLJK_14Ye5KhtE",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdG15aHp0ZWllc2d6cGVqaWlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTgwNzg4NTEsImV4cCI6MjAzMzY1NDg1MX0.pHw-nfKycex3VlWDo8GM8LjpeBMjOVLJK_14Ye5KhtE"
-        ]
-    }
-}
+//enum Endpoint {
+//    case quests
+//    case questDetails(id: String)
+//    
+//    var url: URL {
+//        var components = URLComponents()
+//        components.scheme = "https"
+//        components.host = "hitmyhzteiesgzpejiip.supabase.co"
+//        components.path = "/rest/v1/Quest"
+//        
+//        switch self {
+//        case .quests:
+//            components.queryItems = [
+//                URLQueryItem(name: "select", value: "*")
+//            ]
+//        case .questDetails(let id):
+//            components.queryItems = [
+//                URLQueryItem(name: "id", value: "eq.\(id)"),
+//                URLQueryItem(name: "select", value: "*")
+//            ]
+//        }
+//        
+//        guard let url = components.url else {
+//            preconditionFailure("Invalid URL components: \(components)")
+//        }
+//        
+//        return url
+//    }
+//    
+//    var headers: [String: String] {
+//        return [
+//            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdG15aHp0ZWllc2d6cGVqaWlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTgwNzg4NTEsImV4cCI6MjAzMzY1NDg1MX0.pHw-nfKycex3VlWDo8GM8LjpeBMjOVLJK_14Ye5KhtE",
+//            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdG15aHp0ZWllc2d6cGVqaWlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTgwNzg4NTEsImV4cCI6MjAzMzY1NDg1MX0.pHw-nfKycex3VlWDo8GM8LjpeBMjOVLJK_14Ye5KhtE"
+//        ]
+//    }
+//}
 
 
 // MARK: - API Error
