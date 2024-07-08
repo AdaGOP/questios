@@ -8,19 +8,29 @@
 import Foundation
 
 class ItemViewModel: ObservableObject {
-    private let apiService: APIServiceProtocol
-    @Published var questDetails:  [Quest] = []
+    private let apiService: QuestServiceable
+    @Published var questDetails: [Quest] = []
+    @Published var isLoading: Bool = false
+    @Published var errorMessage: String?
     
-    init(apiService: APIServiceProtocol = QuestAPIService()) {
+    init(apiService: QuestServiceable = QuestService()) {
         self.apiService = apiService
     }
     
     @MainActor
     func getQuestDetails(questId: String) async {
-        do {
-            questDetails = try await apiService.getQuestDetails(questId: questId)
-        } catch {
-            print("Error: \(error.localizedDescription)")
+        isLoading = true
+        errorMessage = nil
+        
+        let result = await apiService.getQuestDetail(id: questId)
+        
+        switch result {
+        case .success(let fetchedDetails):
+            questDetails = fetchedDetails
+        case .failure(let error):
+            errorMessage = error.customMessage
         }
+        
+        isLoading = false
     }
 }

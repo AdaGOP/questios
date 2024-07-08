@@ -4,6 +4,7 @@
 //
 //  Created by David Gunawan on 05/07/24.
 //
+import Foundation
 
 enum QuestsEndpoint {
     case quests
@@ -13,10 +14,8 @@ enum QuestsEndpoint {
 extension QuestsEndpoint: Endpoint {
     var path: String {
         switch self {
-        case .quests:
-            return ""
-        case .questDetail(let id):
-            return ""
+        case .quests, .questDetail:
+            return "/rest/v1/Quest"
         }
     }
     
@@ -34,11 +33,37 @@ extension QuestsEndpoint: Endpoint {
         ]
     }
     
-    var body: [String : String]? {
+    var body: [String: String]? {
         switch self {
         case .quests, .questDetail:
             return nil
         }
+    }
+    
+    var queryItems: [URLQueryItem]? {
+        switch self {
+        case .quests:
+            return [URLQueryItem(name: "select", value: "*")]
+        case .questDetail(let id):
+            return [
+                URLQueryItem(name: "id", value: "eq.\(id)"),
+                URLQueryItem(name: "select", value: "*")
+            ]
+        }
+    }
+    
+    var url: URL {
+        var components = URLComponents()
+        components.scheme = scheme
+        components.host = host
+        components.path = path
+        components.queryItems = queryItems
+        
+        guard let url = components.url else {
+            preconditionFailure("Invalid URL components: \(components)")
+        }
+        
+        return url
     }
     
 }

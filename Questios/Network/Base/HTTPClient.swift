@@ -16,14 +16,7 @@ extension HTTPClient {
         endpoint: Endpoint,
         responseModel: T.Type
     ) async -> Result<T, RequestError> {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = endpoint.scheme
-        urlComponents.host = endpoint.host
-        urlComponents.path = endpoint.path
-        
-        guard let url = urlComponents.url else {
-            return .failure(.invalidURL)
-        }
+        let url = endpoint.url
         
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
@@ -31,10 +24,12 @@ extension HTTPClient {
 
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+            print("Request body = \(body)")
         }
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
+            print("response = \(response)")
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)
             }

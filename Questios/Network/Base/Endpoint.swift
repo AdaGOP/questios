@@ -4,6 +4,7 @@
 //
 //  Created by David Gunawan on 05/07/24.
 //
+import Foundation
 
 protocol Endpoint {
     var scheme: String { get }
@@ -12,6 +13,7 @@ protocol Endpoint {
     var method: RequestMethod { get }
     var header: [String: String]? { get }
     var body: [String: String]? { get }
+    var url: URL { get }
 }
 
 extension Endpoint {
