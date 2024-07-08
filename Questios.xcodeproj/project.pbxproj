@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46511AF72C0D699400192D1C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46511AF62C0D699400192D1C /* Protocols.swift */; };
-		46511AF92C0D6B4A00192D1C /* QuestAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46511AF82C0D6B4A00192D1C /* QuestAPIService.swift */; };
 		4678BB362C0DA26E00078FD9 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678BB352C0DA26E00078FD9 /* ItemViewModel.swift */; };
 		4678BB382C0DA2EE00078FD9 /* QuestDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678BB372C0DA2EE00078FD9 /* QuestDetailView.swift */; };
 		4697C7A82C0ED0DD002D8EED /* DummyData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4697C7A72C0ED0DD002D8EED /* DummyData.json */; };
@@ -19,13 +17,17 @@
 		469C50442C06DE6700F5A65E /* QuestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50432C06DE6700F5A65E /* QuestRowView.swift */; };
 		469C50462C06E81200F5A65E /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50452C06E81200F5A65E /* Quest.swift */; };
 		469C50482C0720C200F5A65E /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C50472C0720C200F5A65E /* QuestViewModel.swift */; };
+		46B780852C37F268009A0DE5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B780842C37F268009A0DE5 /* Endpoint.swift */; };
+		46B780872C37F317009A0DE5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B780862C37F317009A0DE5 /* HTTPMethod.swift */; };
+		46B780892C37F335009A0DE5 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B780882C37F335009A0DE5 /* HTTPClient.swift */; };
+		46B7808B2C37F356009A0DE5 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7808A2C37F356009A0DE5 /* RequestError.swift */; };
+		46B7808E2C37F3DF009A0DE5 /* QuestsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7808D2C37F3DF009A0DE5 /* QuestsEndpoint.swift */; };
+		46B780912C37F622009A0DE5 /* QuestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B780902C37F622009A0DE5 /* QuestService.swift */; };
 		46F883532C1050D200B3FDE0 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F883522C1050D200B3FDE0 /* DifficultyView.swift */; };
 		46F883552C1050E900B3FDE0 /* PrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F883542C1050E900B3FDE0 /* PrizeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		46511AF62C0D699400192D1C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		46511AF82C0D6B4A00192D1C /* QuestAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAPIService.swift; sourceTree = "<group>"; };
 		4678BB352C0DA26E00078FD9 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		4678BB372C0DA2EE00078FD9 /* QuestDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailView.swift; sourceTree = "<group>"; };
 		4697C7A72C0ED0DD002D8EED /* DummyData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DummyData.json; sourceTree = "<group>"; };
@@ -38,6 +40,12 @@
 		469C50452C06E81200F5A65E /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		469C50472C0720C200F5A65E /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
 		469C50492C072C5D00F5A65E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		46B780842C37F268009A0DE5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		46B780862C37F317009A0DE5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		46B780882C37F335009A0DE5 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		46B7808A2C37F356009A0DE5 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		46B7808D2C37F3DF009A0DE5 /* QuestsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsEndpoint.swift; sourceTree = "<group>"; };
+		46B780902C37F622009A0DE5 /* QuestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestService.swift; sourceTree = "<group>"; };
 		46F883522C1050D200B3FDE0 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 		46F883542C1050E900B3FDE0 /* PrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,15 +90,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		46511AFD2C0D78D400192D1C /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				46511AF62C0D699400192D1C /* Protocols.swift */,
-				46511AF82C0D6B4A00192D1C /* QuestAPIService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		469C50292C06DD7100F5A65E = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +113,7 @@
 				46511AFC2C0D78A500192D1C /* Model */,
 				46511AFB2C0D789C00192D1C /* View */,
 				46511AFA2C0D788700192D1C /* View Model */,
-				46511AFD2C0D78D400192D1C /* Services */,
+				46B780822C37F242009A0DE5 /* Network */,
 				469C50492C072C5D00F5A65E /* Info.plist */,
 				469C50392C06DD7300F5A65E /* Assets.xcassets */,
 				469C503B2C06DD7300F5A65E /* Preview Content */,
@@ -128,6 +127,43 @@
 				469C503C2C06DD7300F5A65E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46B780822C37F242009A0DE5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				46B7808F2C37F610009A0DE5 /* Services */,
+				46B7808C2C37F3C7009A0DE5 /* Endpoints */,
+				46B780832C37F259009A0DE5 /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		46B780832C37F259009A0DE5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				46B780842C37F268009A0DE5 /* Endpoint.swift */,
+				46B780862C37F317009A0DE5 /* HTTPMethod.swift */,
+				46B780882C37F335009A0DE5 /* HTTPClient.swift */,
+				46B7808A2C37F356009A0DE5 /* RequestError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		46B7808C2C37F3C7009A0DE5 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				46B7808D2C37F3DF009A0DE5 /* QuestsEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		46B7808F2C37F610009A0DE5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				46B780902C37F622009A0DE5 /* QuestService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		46F883512C1050B000B3FDE0 /* Quest Component */ = {
@@ -213,14 +249,18 @@
 				469C50382C06DD7100F5A65E /* QuestView.swift in Sources */,
 				4678BB362C0DA26E00078FD9 /* ItemViewModel.swift in Sources */,
 				46F883552C1050E900B3FDE0 /* PrizeView.swift in Sources */,
-				46511AF92C0D6B4A00192D1C /* QuestAPIService.swift in Sources */,
 				469C50462C06E81200F5A65E /* Quest.swift in Sources */,
+				46B7808E2C37F3DF009A0DE5 /* QuestsEndpoint.swift in Sources */,
 				469C50482C0720C200F5A65E /* QuestViewModel.swift in Sources */,
 				46F883532C1050D200B3FDE0 /* DifficultyView.swift in Sources */,
-				46511AF72C0D699400192D1C /* Protocols.swift in Sources */,
 				4678BB382C0DA2EE00078FD9 /* QuestDetailView.swift in Sources */,
 				469C50442C06DE6700F5A65E /* QuestRowView.swift in Sources */,
+				46B780892C37F335009A0DE5 /* HTTPClient.swift in Sources */,
+				46B7808B2C37F356009A0DE5 /* RequestError.swift in Sources */,
+				46B780872C37F317009A0DE5 /* HTTPMethod.swift in Sources */,
+				46B780852C37F268009A0DE5 /* Endpoint.swift in Sources */,
 				469C50362C06DD7100F5A65E /* QuestiosApp.swift in Sources */,
+				46B780912C37F622009A0DE5 /* QuestService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
